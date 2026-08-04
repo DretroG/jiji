@@ -3,164 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birthday Card</title>
-  <style>
-    :root {
-      --bg1: #dff2ff;
-      --bg2: #f7edc4;
-      --gold: #d4af37;
-      --text: #3a3a3a;
-      --accent: #ff7ac3;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: "Georgia", "Times New Roman", serif;
-      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.45) 2px, transparent 2px) 0 0/22px 22px,
-                  linear-gradient(160deg, var(--bg1), var(--bg2));
-      padding: 12px;
-      overflow: hidden;
-    }
-
-    .phone-card {
-      width: min(92vw, 420px);
-      aspect-ratio: 9 / 16;
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: clamp(16px, 3.5vh, 28px);
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      color: var(--gold);
-      font-family: "Brush Script MT", "Segoe Script", "Comic Sans MS", cursive;
-      font-size: clamp(1.8rem, 4.4vw, 2.4rem);
-      font-weight: 700;
-      line-height: 1.15;
-      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
-      animation: titleIn 1.1s ease-out both;
-    }
-
-    @keyframes titleIn {
-      0% { opacity: 0; transform: translateY(-16px) scale(0.95); }
-      60% { opacity: 1; transform: translateY(6px) scale(1.02); }
-      100% { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .hero {
-      width: 72%;
-      max-width: 230px;
-      aspect-ratio: 1 / 1;
-      border-radius: 20px;
-      background: linear-gradient(145deg, #fff9ef, #ffe5f5);
-      display: grid;
-      place-items: center;
-      box-shadow: inset 0 0 0 2px rgba(255,255,255,.7), 0 8px 24px rgba(0,0,0,.08);
-      position: relative;
-    }
-
-    .gift {
-      width: 60%;
-      height: 52%;
-      background: #ff8bb8;
-      border-radius: 10px;
-      position: relative;
-      box-shadow: 0 6px 14px rgba(255, 122, 195, .35);
-    }
-
-    .gift::before, .gift::after {
-      content: "";
-      position: absolute;
-      background: #fff3b0;
-    }
-
-    .gift::before { width: 18%; height: 100%; left: 41%; top: 0; }
-    .gift::after  { width: 100%; height: 16%; left: 0; top: 42%; }
-
-    .bow {
-      position: absolute;
-      top: -26px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 56px;
-      height: 30px;
-    }
-
-    .bow::before, .bow::after {
-      content: "";
-      position: absolute;
-      width: 26px;
-      height: 22px;
-      border: 4px solid #ff5da8;
-      border-radius: 50% 50% 50% 0;
-      background: #ffc2de;
-    }
-
-    .bow::before { left: 0; transform: rotate(-22deg); }
-    .bow::after  { right: 0; transform: scaleX(-1) rotate(-22deg); }
-
-    .message {
-      margin: 0;
-      color: var(--text);
-      font-size: clamp(0.95rem, 2.5vw, 1.08rem);
-      line-height: 1.45;
-      max-width: 90%;
-    }
-
-    .surprise-btn {
-      width: clamp(78px, 18vw, 92px);
-      aspect-ratio: 1 / 1;
-      border: none;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 25%, #ffd9ef, var(--accent));
-      color: #fff;
-      font-weight: 700;
-      font-size: clamp(0.65rem, 2vw, 0.78rem);
-      padding: 10px;
-      cursor: pointer;
-      box-shadow: 0 0 0 rgba(255,122,195,0.65);
-      animation: glow 1.8s ease-in-out infinite;
-      transition: transform .2s ease;
-    }
-
-    .surprise-btn:active { transform: scale(0.96); }
-
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(255,122,195,0.55); }
-      50% { box-shadow: 0 0 0 14px rgba(255,122,195,0); }
-    }
-  </style>
+  <meta name="description" content="Happy Birthday JiJi!" />
+  <title>Happy Birthday JiJi!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;500;600&family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/jiji/style.css" />
 </head>
 <body>
-  <main class="phone-card" role="main" aria-label="Birthday Greeting Card">
-    <h1>Happy Birthday Princess Peach!</h1>
+  <div class="ambient" aria-hidden="true">
+    <div class="layer stars"></div>
+    <div class="layer sparkles"></div>
+    <div class="layer hearts"></div>
+    <div class="layer petals"></div>
+    <div class="layer balloons"></div>
+  </div>
 
-    <section class="hero" aria-label="Gift illustration placeholder">
-      <div class="gift">
-        <div class="bow"></div>
+  <header class="topbar glass" aria-label="Audio controls">
+    <button id="musicToggle" class="icon-btn" aria-pressed="false" aria-label="Play background music">▶ Music</button>
+  </header>
+
+  <main id="journey" class="journey" tabindex="-1">
+    <section class="scene reveal active" id="welcome" aria-labelledby="welcome-title">
+      <div class="card luxury">
+        <p class="kicker">Hurrayyy!</p>
+        <h1 id="welcome-title" class="title shimmer">Happy Birthday Princess Peach!</h1>
+        <div class="hero-wrap">
+          <div class="hero-object" role="img" aria-label="Luxury gift with photo placeholder">
+            <img class="hero-photo" src="https://i.ibb.co/358BDp4Q/hero-photo.jpg" alt="Birthday celebrant photo" loading="eager" />
+          </div>
+        </div>
+        <p class="intro">
+          Today isn't just another day—it is the day someone truly wonderful came into this world.
+          May your heart always find joy, your dreams become reality, and your life overflow with God's blessings.
+        </p>
+        <button class="cta" id="openGift">i💝 Open My Birthday Wish</button>
       </div>
     </section>
 
-    <p class="message">
-      Wishing you a day filled with laughter, joy, and everything you wished for! Have the best day ever.
-    </p>
+    <section class="scene reveal" id="letter" aria-labelledby="letter-title">
+      <div class="card luxury">
+        <h2 id="letter-title" class="section-title">HBD</h2>
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-expanded="false" aria-label="Open birthday letter">
+          <div class="flap"></div>
+          <div class="letter-paper">
+            <p id="typedLetter" class="handwriting" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <button class="surprise-btn" type="button" aria-label="Tap for a Surprise!">
-      Tap for a Surprise!
-    </button>
+    <section class="scene reveal" id="wishes" aria-labelledby="wishes-title">
+      <div class="card luxury">
+        <h2 id="wishes-title" class="section-title">Birthday Wishes</h2>
+        <div class="wish-grid" id="wishGrid"></div>
+      </div>
+    </section>
+
+    
+
+    <section class="scene reveal" id="gallery" aria-labelledby="gallery-title">
+      <div class="card luxury">
+        <h2 id="gallery-title" class="section-title">Memory Gallery</h2>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="scene reveal" id="blessing" aria-labelledby="blessing-title">
+      <div class="card luxury center">
+        <h2 id="blessing-title" class="section-title">Promises & Blessings</h2>
+        <blockquote class="verse">Jeremiah 29:11 — “For I know the plans I have for you...”</blockquote>
+        <blockquote class="verse">Psalm 20:4 — “May He give you the desire of your heart...”</blockquote>
+        <blockquote class="verse">Numbers 6:24–26 — “The Lord bless you and keep you...”</blockquote>
+        <p class="final-blessing glow-text">
+          May your smile never fade. May God's grace always surround you.
+          May every new sunrise remind you how deeply loved and wonderfully made you are.
+          Happy Birthday.
+        </p>
+      </div>
+    </section>
+
+    <section class="scene reveal" id="thanks" aria-labelledby="thanks-title">
+      <div class="card luxury center">
+        <h2 id="thanks-title" class="section-title">Thank You</h2>
+        <p class="thank-you">Thank you for being a light in this world. Today we celebrate you.</p>
+      </div>
+    </section>
   </main>
+
+  <nav class="pager" aria-label="Section navigation">
+    <button id="prevBtn" class="nav-btn" aria-label="Previous section">←</button>
+    <button id="nextBtn" class="nav-btn" aria-label="Next section">→</button>
+  </nav>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <button id="closeLightbox" class="icon-btn close" aria-label="Close image preview">✕</button>
+    <img id="lightboxImg" alt="Memory preview" />
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+  <audio id="bgMusic" preload="none" src="/jiji/birthday.mp3"></audio>
+  <script src="/jiji/script.js"></script>
 </body>
-</html>
+      </html>
