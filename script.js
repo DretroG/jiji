@@ -25,7 +25,6 @@ function showSection(index) {
   sections[current].querySelector('h1,h2,p,button')?.focus?.({ preventScroll: true });
 
   if (sections[current].id === 'wishes') revealWishes();
-  if (sections[current].id === 'prayer') revealPrayer();
   if (sections[current].id === 'blessing' && !confettiTriggered) {
     confettiTriggered = true;
     launchConfetti();
@@ -112,19 +111,21 @@ function revealWishes() {
   });
 }
 
-function revealPrayer() {
-  document.querySelectorAll('.reveal-line').forEach((line, i) => {
-    setTimeout(() => line.classList.add('visible'), i * 400);
-  });
-}
 
 const memories = [
-  'Golden Moments', 'Laughter & Light', 'Beautiful Memories', 'Unforgettable Smile', 'Shared Joy', 'Graceful Days'
+  { caption: 'Golden Moments', src: 'https://i.ibb.co/998Y2HcR/memory-1.jpg' },
+  { caption: 'Laughter & Light', src: 'https://i.ibb.co/qYJZsSc0/memory-2.jpg' },
+  { caption: 'Beautiful Memories', src: 'https://i.ibb.co/cSwRVTzR/memory-3.jpg' },
+  { caption: 'Unforgettable Smile', src: 'https://i.ibb.co/35Xnkcr5/memory-4.jpg' },
+  { caption: 'Shared Joy', src: 'https://i.ibb.co/qFn1Q35y/memory-5.jpg' },
+  { caption: 'Graceful Days', src: 'https://i.ibb.co/spMRfcVR/memory-6.jpg' },
+  { caption: 'Special Memories', src: 'https://i.ibb.co/tTH8RqQn/memory-7.jpg' },
+  { caption: 'Forever Blessed', src: 'https://i.ibb.co/WNvb32cY/memory-8.jpg' }
 ];
-galleryGrid.innerHTML = memories.map((caption, i) => `
-  <figure class="memory" data-src="/home/runner/work/jiji/jiji/assets/images/memory-${i+1}.jpg" data-caption="${caption}">
-    <img src="https://picsum.photos/seed/bday${i}/400/400" alt="${caption}" loading="lazy" />
-    <figcaption>${caption}</figcaption>
+galleryGrid.innerHTML = memories.map((item) => `
+  <figure class="memory" data-src="${item.src}" data-caption="${item.caption}">
+    <img src="${item.src}" alt="${item.caption}" loading="lazy" referrerpolicy="no-referrer" />
+    <figcaption>${item.caption}</figcaption>
   </figure>`).join('');
 
 galleryGrid.addEventListener('click', (e) => {
