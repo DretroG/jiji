@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A premium cinematic birthday greeting experience." />
+  <title>Premium Birthday Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;500;600&family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/home/runner/work/jiji/jiji/style.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="layer stars"></div>
+    <div class="layer sparkles"></div>
+    <div class="layer hearts"></div>
+    <div class="layer petals"></div>
+    <div class="layer balloons"></div>
+  </div>
+
+  <header class="topbar glass" aria-label="Audio controls">
+    <button id="musicToggle" class="icon-btn" aria-pressed="false" aria-label="Play background music">▶ Music</button>
+  </header>
+
+  <main id="journey" class="journey" tabindex="-1">
+    <section class="scene reveal active" id="welcome" aria-labelledby="welcome-title">
+      <div class="card luxury">
+        <p class="kicker">A Special Day</p>
+        <h1 id="welcome-title" class="title shimmer">Happy Birthday, Princess Peach</h1>
+        <div class="hero-wrap">
+          <div class="hero-object" role="img" aria-label="Luxury gift with photo placeholder">
+            <div class="photo-placeholder">Your Photo Here</div>
+          </div>
+        </div>
+        <p class="intro">
+          Today isn't just another day—it is the day someone truly wonderful came into this world.
+          May your heart always find joy, your dreams become reality, and your life overflow with God's blessings.
+        </p>
+        <button class="cta" id="openGift">💝 Open My Birthday Wish</button>
+      </div>
+    </section>
+
+    <section class="scene reveal" id="letter" aria-labelledby="letter-title">
+      <div class="card luxury">
+        <h2 id="letter-title" class="section-title">A Beautiful Letter</h2>
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-expanded="false" aria-label="Open birthday letter">
+          <div class="flap"></div>
+          <div class="letter-paper">
+            <p id="typedLetter" class="handwriting" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene reveal" id="wishes" aria-labelledby="wishes-title">
+      <div class="card luxury">
+        <h2 id="wishes-title" class="section-title">Birthday Wishes</h2>
+        <div class="wish-grid" id="wishGrid"></div>
+      </div>
+    </section>
+
+    <section class="scene reveal" id="prayer" aria-labelledby="prayer-title">
+      <div class="card luxury prayer-journal">
+        <h2 id="prayer-title" class="section-title">A Birthday Prayer</h2>
+        <div class="candle-glow" aria-hidden="true"></div>
+        <p class="prayer-line reveal-line">Lord, thank You for the gift of this beautiful life.</p>
+        <p class="prayer-line reveal-line">Fill her days with wisdom, peace, and purpose.</p>
+        <p class="prayer-line reveal-line">Crown her efforts with favor and lasting joy.</p>
+        <p class="prayer-line reveal-line">Let love, grace, and protection surround her always. Amen.</p>
+      </div>
+    </section>
+
+    <section class="scene reveal" id="gallery" aria-labelledby="gallery-title">
+      <div class="card luxury">
+        <h2 id="gallery-title" class="section-title">Memory Gallery</h2>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="scene reveal" id="blessing" aria-labelledby="blessing-title">
+      <div class="card luxury center">
+        <h2 id="blessing-title" class="section-title">Promises & Blessings</h2>
+        <blockquote class="verse">Jeremiah 29:11 — “For I know the plans I have for you...”</blockquote>
+        <blockquote class="verse">Psalm 20:4 — “May He give you the desire of your heart...”</blockquote>
+        <blockquote class="verse">Numbers 6:24–26 — “The Lord bless you and keep you...”</blockquote>
+        <p class="final-blessing glow-text">
+          May your smile never fade. May God's grace always surround you.
+          May every new sunrise remind you how deeply loved and wonderfully made you are.
+          Happy Birthday.
+        </p>
+      </div>
+    </section>
+
+    <section class="scene reveal" id="thanks" aria-labelledby="thanks-title">
+      <div class="card luxury center">
+        <h2 id="thanks-title" class="section-title">Thank You</h2>
+        <p class="thank-you">Thank you for being a light in this world. Today we celebrate you.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="pager" aria-label="Section navigation">
+    <button id="prevBtn" class="nav-btn" aria-label="Previous section">←</button>
+    <button id="nextBtn" class="nav-btn" aria-label="Next section">→</button>
+  </nav>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <button id="closeLightbox" class="icon-btn close" aria-label="Close image preview">✕</button>
+    <img id="lightboxImg" alt="Memory preview" />
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+  <audio id="bgMusic" preload="none" src="/home/runner/work/jiji/jiji/assets/music/birthday-theme.mp3"></audio>
+  <script src="/home/runner/work/jiji/jiji/script.js"></script>
+</body>
+</html>
