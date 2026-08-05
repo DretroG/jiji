@@ -73,7 +73,7 @@ musicToggle.addEventListener('click', () => {
   }
 });
 
-const letterText = `bbI celebrate the beauty of your heart,
+const letterText = `I celebrate the beauty of your heart,
   the strength of your spirit, and the light you bring to everyone around you.`;
 
 function typeLetter() {
