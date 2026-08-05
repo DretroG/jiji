@@ -73,9 +73,8 @@ musicToggle.addEventListener('click', () => {
   }
 });
 
-const letterText = `On this precious day, I celebrate the beauty of your heart,
-  the strength of your spirit, and the light you bring to everyone around you.
-  May this year be wrapped in joy, wonder, and divine favor.`;
+const letterText = `bbI celebrate the beauty of your heart,
+  the strength of your spirit, and the light you bring to everyone around you.`;
 
 function typeLetter() {
   if (letterTyped) return;
