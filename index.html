@@ -27,26 +27,31 @@
     <section class="scene reveal active" id="welcome" aria-labelledby="welcome-title">
       <div class="card luxury">
         <p class="kicker">Hurrayyy!</p>
-        <h1 id="welcome-title" class="title shimmer">Happy Birthday Peaches!</h1>
+        <h1 id="welcome-title" class="title shimmer">Happy Birthday Princess Peach!</h1>
         <div class="hero-wrap">
-          <div class="hero-object" role="img" aria-label="Luxury gift with photo placeholder">
+          <div class="hero-object" role="img" aria-label="Birthday celebrant photo">
             <img class="hero-photo" src="https://i.ibb.co/358BDp4Q/hero-photo.jpg" alt="Birthday celebrant photo" loading="eager" />
           </div>
         </div>
         <p class="intro">
-         May your heart always find joy, your dreams become reality, and your life overflow with God's blessings.
+          Today is a celebration of your beautiful heart, your light, and the joy you bring to every moment.
+          May this year open doors to laughter, meaningful memories, and all the happiness you deserve.
         </p>
-        <button class="cta" id="openGift">i💝 Open My Birthday Wish</button>
+        <button class="cta" id="openGift">💝 Open My Birthday Wish</button>
       </div>
     </section>
 
     <section class="scene reveal" id="letter" aria-labelledby="letter-title">
       <div class="card luxury">
-        <h2 id="letter-title" class="section-title">HBD</h2>
-        <div class="envelope" id="envelope" role="button" tabindex="0" aria-expanded="false" aria-label="Open birthday letter">
-          <div class="flap"></div>
-          <div class="letter-paper">
-            <p id="typedLetter" class="handwriting" aria-live="polite"></p>
+        <h2 id="letter-title" class="section-title">A Letter for You</h2>
+        <div class="envelope-wrap" id="envelopeWrap">
+          <p id="envelopeHint" class="envelope-hint">💌 Tap the Envelope</p>
+          <span class="hint-arrow" aria-hidden="true">↓</span>
+          <div class="envelope" id="envelope" role="button" tabindex="0" aria-expanded="false" aria-label="Open birthday letter">
+            <div class="flap"></div>
+            <div class="letter-paper">
+              <p id="typedLetter" class="handwriting" aria-live="polite"></p>
+            </div>
           </div>
         </div>
       </div>
@@ -59,8 +64,6 @@
       </div>
     </section>
 
-    
-
     <section class="scene reveal" id="gallery" aria-labelledby="gallery-title">
       <div class="card luxury">
         <h2 id="gallery-title" class="section-title">Memory Gallery</h2>
@@ -70,9 +73,11 @@
 
     <section class="scene reveal" id="blessing" aria-labelledby="blessing-title">
       <div class="card luxury center">
+        <h2 id="blessing-title" class="section-title">Final Birthday Blessing</h2>
         <p class="final-blessing glow-text">
-          May your smile never fade. May God's grace always surround you.
-          May every new sunrise remind you how deeply loved and wonderfully made you are.
+          May your smile never fade.
+          May your days be full of peace, wonder, and beautiful surprises.
+          May each new sunrise remind you how deeply cherished you are.
           Happy Birthday.
         </p>
       </div>
@@ -91,10 +96,15 @@
     <button id="nextBtn" class="nav-btn" aria-label="Next section">→</button>
   </nav>
 
-  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Fullscreen image viewer">
     <button id="closeLightbox" class="icon-btn close" aria-label="Close image preview">✕</button>
-    <img id="lightboxImg" alt="Memory preview" />
-    <p id="lightboxCaption"></p>
+    <button id="prevLightbox" class="icon-btn lb-nav prev" aria-label="Previous memory">←</button>
+    <button id="nextLightbox" class="icon-btn lb-nav next" aria-label="Next memory">→</button>
+    <div class="lightbox-stage" id="lightboxStage">
+      <img id="lightboxImg" alt="Memory preview" draggable="false" />
+    </div>
+    <p id="lightboxCounter" class="lb-meta"></p>
+    <p id="lightboxCaption" class="lb-meta caption"></p>
   </div>
 
   <canvas id="confettiCanvas" aria-hidden="true"></canvas>
