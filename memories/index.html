@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Birthday to Remember</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <span class="spark spark-1"></span>
+    <span class="spark spark-2"></span>
+    <span class="spark spark-3"></span>
+  </div>
+
+  <main>
+    <section class="landing" id="landing" aria-labelledby="landing-title">
+      <p class="eyebrow">Digital Memory Album</p>
+      <h1 id="landing-title">A Birthday to Remember</h1>
+      <p class="subtitle">August 4, 2026</p>
+      <p class="intro">Some days become memories.<br />Some memories become treasures.<br /><br />This album was created to preserve the beautiful moments from a day worth remembering.</p>
+      <button id="enter-album" class="btn primary" aria-label="Enter the album">Enter the Album</button>
+    </section>
+
+    <section class="album" id="album" aria-label="Memory album" hidden>
+      <header class="album-header">
+        <h2>Memory Archive</h2>
+        <p>Timeless moments kept with warmth and gratitude.</p>
+      </header>
+
+      <section class="featured" aria-live="polite">
+        <p class="section-kicker">⭐ Featured Memory</p>
+        <h3 id="featured-title"></h3>
+        <p id="featured-caption"></p>
+      </section>
+
+      <section class="music-panel" aria-label="Background music controls">
+        <h3>Ambient Music</h3>
+        <div class="music-actions">
+          <button id="play-music" class="btn">Play</button>
+          <button id="pause-music" class="btn">Pause</button>
+          <button id="mute-music" class="btn">Mute</button>
+        </div>
+        <label class="volume-wrap" for="volume">Volume</label>
+        <input id="volume" type="range" min="0" max="1" step="0.05" value="0.6" aria-label="Music volume" />
+        <audio id="bg-music" preload="metadata">
+          <source src="music.mp3" type="audio/mpeg" />
+          <source src="music.m4a" type="audio/mp4" />
+        </audio>
+      </section>
+
+      <section class="controls" aria-label="Search and filter memories">
+        <label for="search" class="sr-only">Search memories</label>
+        <input id="search" type="search" placeholder="Search title, caption, tags, date..." aria-label="Search memories" />
+        <div id="category-filters" class="category-filters" role="tablist" aria-label="Memory categories"></div>
+      </section>
+
+      <section class="stats" id="stats" aria-label="Album statistics"></section>
+
+      <section class="actions">
+        <button id="slideshow-toggle" class="btn primary" aria-label="Play memories slideshow">▶ Play Memories</button>
+      </section>
+
+      <section class="gallery-section" aria-label="Memory gallery">
+        <div id="gallery" class="gallery" role="list"></div>
+      </section>
+
+      <section class="timeline" aria-label="Memory timeline">
+        <h3>Timeline</h3>
+        <div id="timeline-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Fullscreen memory viewer" hidden>
+    <div class="lightbox-backdrop" id="lightbox-close-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="icon-btn close" id="close-lightbox" aria-label="Close fullscreen viewer">✕</button>
+      <button class="icon-btn prev" id="prev-memory" aria-label="Previous memory">❮</button>
+      <figure class="lightbox-figure" id="lightbox-figure">
+        <img id="lightbox-image" alt="Selected memory" draggable="false" />
+      </figure>
+      <button class="icon-btn next" id="next-memory" aria-label="Next memory">❯</button>
+
+      <div class="lightbox-meta">
+        <p id="lightbox-counter"></p>
+        <h4 id="lightbox-title"></h4>
+        <p id="lightbox-date" class="muted"></p>
+        <p id="lightbox-caption"></p>
+        <p id="lightbox-location" class="muted"></p>
+        <p id="lightbox-tags" class="tags"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <h3>The Story Continues...</h3>
+    <p>This album is still growing.<br />Every new memory adds another beautiful page to this collection.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
